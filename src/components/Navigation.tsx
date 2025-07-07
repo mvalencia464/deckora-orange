@@ -163,7 +163,7 @@ const Navigation: React.FC = () => {
           </div>
 
           {/* Phone Button - Branded with primary colors */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden sm:flex items-center">
             <a
               href="tel:+15096209939"
               className={`flex items-center space-x-2 px-4 py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 ${
