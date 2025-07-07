@@ -168,8 +168,8 @@ const Navigation: React.FC = () => {
               href="tel:+15096209939"
               className={`flex items-center space-x-2 px-4 py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 ${
                 isScrolled
-                  ? `${colors.primary.bg.main} ${colors.primary.hover.bg.dark} text-white`
-                  : `${colors.primary.bg.main} ${colors.primary.hover.bg.dark} text-white backdrop-blur-sm`
+                  ? 'bg-primary-600 hover:bg-primary-700 text-white'
+                  : 'bg-primary-600 hover:bg-primary-700 text-white backdrop-blur-sm'
               }`}
             >
               <Phone className="w-4 h-4" />
@@ -247,7 +247,7 @@ const Navigation: React.FC = () => {
               <div className="border-t pt-3 mt-3">
                 <a
                   href="tel:+15096209939"
-                  className={`flex items-center space-x-2 px-3 py-3 ${colors.primary.bg.main} ${colors.primary.hover.bg.dark} text-white rounded-lg font-bold transition-colors duration-300`}
+                  className="flex items-center space-x-2 px-3 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-bold transition-colors duration-300"
                 >
                   <Phone className="w-4 h-4" />
                   <span>(509) 620-9939</span>
