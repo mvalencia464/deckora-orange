@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { colors } from '../utils/colors';
 
 const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -83,14 +84,14 @@ const Gallery: React.FC = () => {
   }, [selectedImage]);
 
   return (
-    <section id="gallery" className="py-20 bg-gray-50">
+    <section id="gallery" className={`py-20 ${colors.neutral.bg.lightest}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className={`text-4xl font-bold ${colors.neutral.text.darkest} mb-4`}>
             Our Carpentry & Home Improvement Portfolio
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className={`text-xl ${colors.neutral.text.main} max-w-3xl mx-auto`}>
             Explore our collection of custom carpentry and home improvement projects. From custom stairs
             to complete home renovations, see how we transform your vision into beautiful, functional reality.
           </p>
@@ -123,12 +124,12 @@ const Gallery: React.FC = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <p className="text-lg text-gray-600 mb-8">
+          <p className={`text-lg ${colors.neutral.text.main} mb-8`}>
             Ready to transform your home? Let's discuss your vision!
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+            className={`inline-flex items-center px-8 py-4 ${colors.primary.bg.main} ${colors.primary.hover.bg.dark} text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl`}
           >
             Get Your Free Project Consultation
           </a>

@@ -1,6 +1,6 @@
-# Horizon Deck Builder
+# Construction/Service Business Website Template
 
-A modern React-based website for deck building services with integrated HighLevel CRM forms, Google Places autocomplete, and Cloudflare image hosting.
+A modern React-based website template for construction and service businesses with integrated HighLevel CRM forms, Google Places autocomplete, and Cloudflare image hosting.
 
 ## Features
 
@@ -155,16 +155,13 @@ npm run build
    - Copy the generated webhook URL (format: `https://services.leadconnectorhq.com/hooks/{LOCATION_ID}/webhook-trigger/{TRIGGER_ID}`)
 
 2. **Update Project Configuration**
-   ```javascript
-   // Update in src/components/CustomForm.tsx
-   webhookUrl = "https://services.leadconnectorhq.com/hooks/YOUR_LOCATION_ID/webhook-trigger/YOUR_TRIGGER_ID"
-
-   // Update in src/components/HeroSection.tsx
-   webhookUrl = "https://services.leadconnectorhq.com/hooks/YOUR_LOCATION_ID/webhook-trigger/YOUR_TRIGGER_ID"
-
-   // Update location_id in CustomForm.tsx payload
-   location_id: 'YOUR_LOCATION_ID'
+   ```bash
+   # Update your .env file with your webhook URL
+   VITE_HIGHLEVEL_WEBHOOK_URL=https://services.leadconnectorhq.com/hooks/YOUR_LOCATION_ID/webhook-trigger/YOUR_TRIGGER_ID
+   VITE_HIGHLEVEL_LOCATION_ID=YOUR_LOCATION_ID
    ```
+
+   The components will automatically use these environment variables. No code changes needed!
 
 3. **Send Test Data for Mapping**
    - Use the included `webhook-test.html` file
@@ -189,12 +186,12 @@ The webhook sends this standardized payload:
   "postal_code": "30139",
   "project_image_url": "https://your-domain.com/sample-image.jpg",
   "consent": true,
-  "source": "horizon_deck_builder",
+  "source": "your_project_name",
   "location_id": "YOUR_LOCATION_ID",
   "name": "Maria Valencia",
   "submitted_at": "2025-01-07T20:30:00.000Z",
-  "project_type": "Deck Building",
-  "message": "I need a quote for a new deck construction"
+  "project_type": "Your Service Type",
+  "message": "Sample message for your service"
 }
 ```
 
@@ -247,7 +244,8 @@ For new projects, create a `webhook-test.html` file with this template:
     </div>
     <script>
         async function sendTestData() {
-            // UPDATE THIS URL FOR YOUR PROJECT
+            // Use your actual webhook URL from .env file
+            // This should match your VITE_HIGHLEVEL_WEBHOOK_URL
             const webhookUrl = "https://services.leadconnectorhq.com/hooks/YOUR_LOCATION_ID/webhook-trigger/YOUR_TRIGGER_ID";
 
             const testData = {
@@ -266,7 +264,7 @@ For new projects, create a `webhook-test.html` file with this template:
                 "location_id": "YOUR_LOCATION_ID", // UPDATE THIS
                 "name": "Maria Valencia",
                 "submitted_at": new Date().toISOString(),
-                "project_type": "Sample Project",
+                "project_type": "Your Service Type",
                 "message": "Test message for webhook mapping"
             };
 
@@ -304,8 +302,12 @@ For new projects, create a `webhook-test.html` file with this template:
 ```
 
 ### Quick Setup Steps:
-1. Copy the template above into `webhook-test.html`
-2. Replace `YOUR_LOCATION_ID` and `YOUR_TRIGGER_ID` with actual values
+1. Update your `.env` file with your project's webhook URL:
+   ```bash
+   VITE_HIGHLEVEL_WEBHOOK_URL=https://services.leadconnectorhq.com/hooks/YOUR_LOCATION_ID/webhook-trigger/YOUR_TRIGGER_ID
+   VITE_HIGHLEVEL_LOCATION_ID=YOUR_LOCATION_ID
+   ```
+2. Update `webhook-test.html` with your actual webhook URL and location ID
 3. Update `source` field to match your project name
 4. Open the file in browser and click the button
 5. Go to HighLevel and map the received payload

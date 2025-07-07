@@ -38,10 +38,11 @@ src/
 ## 🎨 Design System
 
 ### Color Palette
-- **Primary Blue**: `blue-600` (#2563eb) to `blue-700` (#1d4ed8)
-- **Background**: `gray-50` (#f9fafb) and `white`
-- **Text**: `gray-900` (#111827) for headings, `gray-600` (#4b5563) for body
-- **Accent Colors**: `green-600`, `yellow-400` for success/ratings
+- **Primary Blue**: `primary-600` (#2563eb) to `primary-700` (#1d4ed8) - Main brand color
+- **Secondary Slate**: `secondary-600` (#475569) to `secondary-700` (#334155) - Accent color
+- **Background**: `neutral-50` (#f9fafb) and `white`
+- **Text**: `neutral-900` (#111827) for headings, `neutral-600` (#4b5563) for body
+- **Accent Colors**: `success-600`, `warning-400` for success/ratings
 
 ### Typography
 - **Headings**: Bold, ranging from `text-2xl` to `text-6xl`

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { loadGoogleMapsAPI, initializeAddressAutocomplete } from '../utils/googlePlaces';
+import { colors } from '../utils/colors';
 
 // --- Configuration ---
 const CLOUDFLARE_WORKER_URL = import.meta.env.VITE_IMAGE_UPLOAD_URL || '';
 const CLOUDFLARE_AUTH_KEY = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN || '';
-const DEFAULT_WEBHOOK_URL = import.meta.env.VITE_HIGHLEVEL_WEBHOOK_URL || '';
-const DEFAULT_LOCATION_ID = import.meta.env.VITE_HIGHLEVEL_LOCATION_ID || '';
+const DEFAULT_WEBHOOK_URL = import.meta.env.VITE_HIGHLEVEL_WEBHOOK_URL || 'https://services.leadconnectorhq.com/hooks/XIihUR3iXWQYFe7UPY6Z/webhook-trigger/MUYIKA9a4YvwYMYgiOXL';
+const DEFAULT_LOCATION_ID = import.meta.env.VITE_HIGHLEVEL_LOCATION_ID || 'XIihUR3iXWQYFe7UPY6Z';
 const BACKUP_WEBHOOK_URL = import.meta.env.VITE_BACKUP_WEBHOOK_URL || '';
 
 interface CustomFormProps {
@@ -15,14 +16,14 @@ interface CustomFormProps {
 
 // Helper component for the upload icon
 const UploadIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="mx-auto h-10 w-10 text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1">
+    <svg xmlns="http://www.w3.org/2000/svg" className="mx-auto h-10 w-10 text-primary-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1">
         <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
     </svg>
 );
 
 // Helper component for the loading spinner
 const Loader = () => (
-    <div className="loader border-4 border-f3f3f3 border-t-4 border-t-blue-400 rounded-full w-6 h-6 animate-spin"></div>
+    <div className={`loader border-4 ${colors.neutral.border.lighter} border-t-4 ${colors.primary.border.main} rounded-full w-6 h-6 animate-spin`}></div>
 );
 
 const CustomForm: React.FC<CustomFormProps> = ({
@@ -233,7 +234,7 @@ const CustomForm: React.FC<CustomFormProps> = ({
     };
 
     return (
-        <div className="w-full max-w-sm bg-blue-600 text-white rounded-2xl shadow-2xl p-6">
+        <div className="w-full max-w-md bg-primary-600 text-white rounded-2xl shadow-2xl p-6">
             <h2 className="text-xl font-bold text-center mb-5">{title}</h2>
             <form onSubmit={handleSubmit}>
                 <div className="space-y-3">
@@ -243,7 +244,7 @@ const CustomForm: React.FC<CustomFormProps> = ({
                         value={formData.first_name}
                         onChange={handleInputChange}
                         placeholder="First Name"
-                        className="w-full p-2.5 rounded-lg text-gray-800 text-sm"
+                        className={`w-full p-2.5 rounded-lg ${colors.neutral.text.darker} text-sm`}
                         required
                     />
                     <input
@@ -252,7 +253,7 @@ const CustomForm: React.FC<CustomFormProps> = ({
                         value={formData.last_name}
                         onChange={handleInputChange}
                         placeholder="Last Name"
-                        className="w-full p-2.5 rounded-lg text-gray-800 text-sm"
+                        className={`w-full p-2.5 rounded-lg ${colors.neutral.text.darker} text-sm`}
                         required
                     />
                     <input
@@ -261,7 +262,7 @@ const CustomForm: React.FC<CustomFormProps> = ({
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="Phone*"
-                        className="w-full p-2.5 rounded-lg text-gray-800 text-sm"
+                        className={`w-full p-2.5 rounded-lg ${colors.neutral.text.darker} text-sm`}
                         required
                     />
                     <input
@@ -270,7 +271,7 @@ const CustomForm: React.FC<CustomFormProps> = ({
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="Email*"
-                        className="w-full p-2.5 rounded-lg text-gray-800 text-sm"
+                        className={`w-full p-2.5 rounded-lg ${colors.neutral.text.darker} text-sm`}
                         required
                     />
                     <input
@@ -278,11 +279,11 @@ const CustomForm: React.FC<CustomFormProps> = ({
                         type="text"
                         name="address_search"
                         placeholder="Search address"
-                        className="w-full p-2.5 rounded-lg text-gray-800 text-sm"
+                        className={`w-full p-2.5 rounded-lg ${colors.neutral.text.darker} text-sm`}
                     />
 
                     <div
-                        className="bg-blue-500 border-2 border-dashed border-blue-300 rounded-lg p-4 text-center cursor-pointer"
+                        className="bg-primary-500 border-2 border-dashed border-primary-300 rounded-lg p-4 text-center cursor-pointer"
                         onClick={() => fileInputRef.current?.click()}
                         onDragOver={handleDragOver}
                         onDrop={handleDrop}
@@ -292,10 +293,10 @@ const CustomForm: React.FC<CustomFormProps> = ({
                         ) : (
                             <>
                                 <UploadIcon />
-                                <div className="font-medium text-white hover:text-blue-100 cursor-pointer mt-1 block text-sm">
+                                <div className="font-medium text-white hover:text-primary-100 cursor-pointer mt-1 block text-sm">
                                     Image Upload of Project
                                 </div>
-                                <p className="text-xs text-blue-200 mt-1">PNG, JPG, GIF up to 10MB</p>
+                                <p className="text-xs text-primary-200 mt-1">PNG, JPG, GIF up to 10MB</p>
                             </>
                         )}
                         <input
@@ -311,7 +312,7 @@ const CustomForm: React.FC<CustomFormProps> = ({
                     {uploadStatus && (
                          <div className="text-center text-sm flex items-center justify-center gap-2">
                             {isUploading && <Loader />}
-                            <span className={uploadStatus.includes('failed') ? 'text-red-300' : 'text-green-200'}>{uploadStatus}</span>
+                            <span className={uploadStatus.includes('failed') ? colors.error.text.main : colors.success.text.main}>{uploadStatus}</span>
                         </div>
                     )}
 
@@ -325,8 +326,8 @@ const CustomForm: React.FC<CustomFormProps> = ({
                             className="h-4 w-4 rounded mt-1"
                             required
                         />
-                        <label htmlFor="consent" className="text-xs text-blue-100 leading-tight">
-                            I agree to receive text message updates from Deckora. Msg frequency varies (e.g., up to 4/month). Msg & data rates may apply. Reply STOP to unsubscribe at any time. View privacy & terms.
+                        <label htmlFor="consent" className="text-xs text-primary-100 leading-tight">
+                            I agree to receive text message updates from Coastal Custom Carpentry. Msg frequency varies (e.g., up to 4/month). Msg & data rates may apply. Reply STOP to unsubscribe at any time. View privacy & terms.
                         </label>
                     </div>
                 </div>
@@ -334,13 +335,13 @@ const CustomForm: React.FC<CustomFormProps> = ({
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gray-800 hover:bg-gray-900 text-white font-bold p-3 rounded-lg mt-5 transition duration-300 disabled:bg-gray-500 text-sm"
+                    className={`w-full ${colors.neutral.bg.darkest} hover:bg-neutral-800 text-white font-bold p-3 rounded-lg mt-5 transition duration-300 disabled:${colors.neutral.bg.main} text-sm`}
                 >
                     {isSubmitting ? 'Submitting...' : 'Get Started'}
                 </button>
 
                 {formStatus && (
-                    <div className={`text-center mt-3 font-medium text-sm ${formStatus.includes('failed') ? 'text-red-300' : 'text-green-200'}`}>
+                    <div className={`text-center mt-3 font-medium text-sm ${formStatus.includes('failed') ? colors.error.text.main : colors.success.text.main}`}>
                         {formStatus}
                     </div>
                 )}

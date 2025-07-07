@@ -66,8 +66,9 @@
 
     <script>
         async function sendTestData() {
-            // UPDATE THIS URL FOR YOUR PROJECT
-            const webhookUrl = "https://services.leadconnectorhq.com/hooks/YOUR_LOCATION_ID/webhook-trigger/YOUR_TRIGGER_ID";
+            // Get webhook URL from environment or use the current project's URL
+            // This should match your .env file's VITE_HIGHLEVEL_WEBHOOK_URL
+            const webhookUrl = "https://services.leadconnectorhq.com/hooks/XIihUR3iXWQYFe7UPY6Z/webhook-trigger/MUYIKA9a4YvwYMYgiOXL";
             
             const testData = {
                 "first_name": "Maria",
@@ -82,7 +83,7 @@
                 "project_image_url": "https://img.stokeleads.com/1751901395339-5rmlpv8lx7mfpeaq2c5v8i.jpeg",
                 "consent": true,
                 "source": "horizon_deck_builder", // UPDATE THIS
-                "location_id": "YOUR_LOCATION_ID", // UPDATE THIS
+                "location_id": "XIihUR3iXWQYFe7UPY6Z", // Should match your .env VITE_HIGHLEVEL_LOCATION_ID
                 "name": "Maria Valencia",
                 "submitted_at": new Date().toISOString(),
                 "project_type": "Deck Building",

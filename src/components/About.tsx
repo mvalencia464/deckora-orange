@@ -37,8 +37,8 @@ const About: React.FC = () => {
             </h2>
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <p>
-                Horizon Carpentry & Handyman has been serving the Fairmount, La Fayette, and North Georgia area with exceptional
-                carpentry and handyman services. From deck construction to general repairs, we bring years of experience
+                Coastal Custom Carpentry has been serving the Brunswick, St. Simons Island, Jekyll Island, and coastal Georgia area with exceptional
+                custom carpentry and handyman services. From deck construction to general repairs, we bring years of experience
                 and unwavering commitment to quality craftsmanship.
               </p>
               <p>
@@ -56,15 +56,15 @@ const About: React.FC = () => {
             {/* Key Stats */}
             <div className="grid grid-cols-3 gap-8 mt-8 pt-8 border-t border-gray-200">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">50+</div>
+                <div className="text-3xl font-bold text-primary-600">75+</div>
                 <div className="text-sm text-gray-600">Happy Clients</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">10+</div>
+                <div className="text-3xl font-bold text-primary-600">12+</div>
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">4.7★</div>
+                <div className="text-3xl font-bold text-primary-600">4.8★</div>
                 <div className="text-sm text-gray-600">Average Rating</div>
               </div>
             </div>
@@ -97,7 +97,7 @@ const About: React.FC = () => {
         {/* Values Section */}
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold text-gray-900 mb-4">
-            Why Choose Horizon Carpentry & Handyman?
+            Why Choose Coastal Custom Carpentry?
           </h3>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We're skilled craftsmen who take pride in every project – from deck construction to complete
@@ -112,8 +112,8 @@ const About: React.FC = () => {
               key={index}
               className="text-center p-6 bg-gray-50 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
-                <value.icon className="w-8 h-8 text-blue-600" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
+                <value.icon className="w-8 h-8 text-primary-600" />
               </div>
               <h4 className="text-xl font-semibold text-gray-900 mb-3">
                 {value.title}
@@ -126,10 +126,10 @@ const About: React.FC = () => {
         </div>
 
         {/* Process Section */}
-        <div className="mt-20 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-12 text-white">
+        <div className="mt-20 bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-12 text-white">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold mb-4">Our Simple Process</h3>
-            <p className="text-blue-100 text-lg">
+            <p className="text-primary-100 text-lg">
               From initial consultation to project completion, we make home improvement easy and stress-free.
             </p>
           </div>
@@ -142,11 +142,11 @@ const About: React.FC = () => {
               { step: "4", title: "Completion", desc: "Final walkthrough and satisfaction guarantee" }
             ].map((item, index) => (
               <div key={index} className="text-center">
-                <div className="w-12 h-12 bg-white text-blue-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
+                <div className="w-12 h-12 bg-white text-primary-600 rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
                   {item.step}
                 </div>
                 <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
-                <p className="text-blue-100 text-sm">{item.desc}</p>
+                <p className="text-primary-100 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>

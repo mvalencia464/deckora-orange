@@ -1,6 +1,7 @@
 import React from 'react';
 import { Star } from 'lucide-react';
 import CustomForm from './CustomForm';
+import { gradients } from '../utils/colors';
 
 interface HeroSectionProps {
   backgroundImage?: string;
@@ -18,33 +19,28 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundImage = "https://storage.googleapis.com/msgsndr/aQYV8jwYWM9za5egdIl2/media/686738689ca6fba4f4182282.webp",
-  title = "Fairmount's Trusted",
-  subtitle = "Carpentry & Handyman Services",
-  description = "Serving Fairmount, La Fayette, and North Georgia with expert carpentry, deck building, handyman services, and home repairs. Licensed, insured, and locally trusted.",
+  title = "Brunswick's Trusted",
+  subtitle = "Custom Carpentry & Handyman Services",
+  description = "Serving Brunswick, St. Simons Island, Jekyll Island, and coastal Georgia with expert custom carpentry, deck building, handyman services, and home repairs. Licensed, insured, and locally trusted.",
   primaryButtonText = "Explore Our Services",
   secondaryButtonText = "View Our Work",
   formTitle = "Get Your Free Project Estimate",
-  reviewText = "Rated 4.7 Stars by 12+ North Georgia Homeowners!",
-  reviewCount = "12+",
+  reviewText = "Rated 4.8 Stars by 15+ Coastal Georgia Homeowners!",
+  reviewCount = "15+",
   useCustomForm = true,
-  webhookUrl = import.meta.env.VITE_HIGHLEVEL_WEBHOOK_URL || ""
+  webhookUrl = import.meta.env.VITE_HIGHLEVEL_WEBHOOK_URL || "https://services.leadconnectorhq.com/hooks/XIihUR3iXWQYFe7UPY6Z/webhook-trigger/MUYIKA9a4YvwYMYgiOXL"
 }) => {
   // Force cache bust - responsive layout should work properly now
 
   return (
     <section className="relative min-h-[70vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Custom Gradient Overlay */}
-      <div 
+      {/* Background Image with Tailwind Gradient Overlay */}
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        {/* Custom gradient overlay */}
-        <div 
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(135deg, rgba(29, 78, 216, 0.7), rgba(17, 24, 39, 1.0))'
-          }}
-        ></div>
+        {/* Semantic gradient overlay using Tailwind colors */}
+        <div className={`absolute inset-0 ${gradients.hero}`}></div>
       </div>
 
       {/* Content Container */}
@@ -57,9 +53,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 {title}
                 <br />
-                <span className="text-blue-200">{subtitle}</span>
+                <span className="text-primary-200">{subtitle}</span>
               </h1>
-              <p className="text-lg sm:text-xl text-blue-100 max-w-2xl leading-relaxed">
+              <p className="text-lg sm:text-xl text-primary-100 max-w-2xl leading-relaxed">
                 {description}
               </p>
             </div>
@@ -68,26 +64,26 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a
                 href="#gallery"
-                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-center"
+                className="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-center"
               >
                 {primaryButtonText}
               </a>
               <a
                 href="#gallery"
-                className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-blue-800 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 text-center"
+                className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-primary-800 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 text-center"
               >
                 {secondaryButtonText}
               </a>
             </div>
 
             {/* Social Proof - Always visible */}
-            <div className="bg-blue-800/30 backdrop-blur-sm rounded-xl p-6 border border-blue-400/20">
+            <div className="bg-primary-800/30 backdrop-blur-sm rounded-xl p-6 border border-primary-400/20">
               <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                 ))}
               </div>
-              <p className="text-blue-100 font-medium">{reviewText}</p>
+              <p className="text-primary-100 font-medium">{reviewText}</p>
             </div>
           </div>
 
@@ -102,7 +98,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               <div className="w-full max-w-md mx-auto">
                 <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
                   {/* Form Header */}
-                  <div className="px-6 py-4 text-center bg-gradient-to-r from-blue-600 to-blue-700">
+                  <div className={`px-6 py-4 text-center ${gradients.primary}`}>
                     <h3 className="text-lg sm:text-xl font-bold text-white">{formTitle}</h3>
                   </div>
                   

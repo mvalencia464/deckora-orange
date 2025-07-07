@@ -1,5 +1,6 @@
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
+import { colors, gradients } from '../utils/colors';
 
 interface Review {
   id: number;
@@ -73,7 +74,7 @@ const Reviews: React.FC = () => {
     return [...Array(5)].map((_, i) => (
       <Star
         key={i}
-        className={`w-5 h-5 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+        className={`w-5 h-5 ${i < rating ? `${colors.warning.text.main} fill-current` : colors.neutral.text.lighter}`}
       />
     ));
   };
@@ -83,19 +84,19 @@ const Reviews: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className={`text-4xl font-bold ${colors.neutral.text.darkest} mb-4`}>
             What Our Clients Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className={`text-xl ${colors.neutral.text.main} max-w-3xl mx-auto mb-8`}>
             Don't just take our word for it. Here's what our satisfied customers have to say about their carpentry and handyman experience with us.
           </p>
 
           {/* Overall Rating */}
-          <div className="inline-flex items-center bg-blue-50 px-6 py-3 rounded-full">
+          <div className={`inline-flex items-center ${colors.primary.bg.lightest} px-6 py-3 rounded-full`}>
             <div className="flex items-center space-x-2">
               {renderStars(5)}
-              <span className="text-2xl font-bold text-gray-900 ml-2">4.7</span>
-              <span className="text-gray-600">• 12+ Reviews</span>
+              <span className={`text-2xl font-bold ${colors.neutral.text.darkest} ml-2`}>4.7</span>
+              <span className={colors.neutral.text.main}>• 12+ Reviews</span>
             </div>
           </div>
         </div>
@@ -105,18 +106,18 @@ const Reviews: React.FC = () => {
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="bg-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className={`${colors.neutral.bg.lightest} rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2`}
             >
               {/* Quote Icon */}
               <div className="flex justify-between items-start mb-6">
-                <Quote className="w-8 h-8 text-blue-600 opacity-50" />
+                <Quote className={`w-8 h-8 ${colors.primary.text.main} opacity-50`} />
                 <div className="flex items-center space-x-1">
                   {renderStars(review.rating)}
                 </div>
               </div>
 
               {/* Review Text */}
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className={`${colors.neutral.text.dark} mb-6 leading-relaxed`}>
                 "{review.text}"
               </p>
 
@@ -128,9 +129,9 @@ const Reviews: React.FC = () => {
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <h4 className="font-semibold text-gray-900">{review.name}</h4>
-                  <p className="text-sm text-gray-600">{review.location}</p>
-                  <p className="text-xs text-gray-500">{review.date}</p>
+                  <h4 className={`font-semibold ${colors.neutral.text.darkest}`}>{review.name}</h4>
+                  <p className={`text-sm ${colors.neutral.text.main}`}>{review.location}</p>
+                  <p className={`text-xs ${colors.neutral.text.light}`}>{review.date}</p>
                 </div>
               </div>
             </div>
@@ -139,17 +140,17 @@ const Reviews: React.FC = () => {
 
         {/* Call to Action */}
         <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
+          <div className={`${gradients.primary} rounded-2xl p-8 text-white`}>
             <h3 className="text-2xl font-bold mb-4">
               Ready to Join Our Happy Customers?
             </h3>
-            <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+            <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
               Experience the same exceptional service and craftsmanship that has earned us 4.7-star reviews.
               Get your free consultation today!
             </p>
             <a
               href="#contact"
-              className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-all duration-300 transform hover:scale-105"
+              className={`inline-flex items-center px-8 py-4 bg-white ${colors.primary.text.main} font-semibold rounded-lg hover:bg-primary-50 transition-all duration-300 transform hover:scale-105`}
             >
               Start Your Project Today
             </a>
