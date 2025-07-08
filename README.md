@@ -88,10 +88,9 @@ A modern React-based website template for construction and service businesses wi
 ```
 
 ```javascript
-// ✅ CORRECT - PostCSS config
+// ✅ CORRECT - PostCSS config (no postcss-import needed for HTML link tags)
 export default {
   plugins: {
-    'postcss-import': {},  // REQUIRED for @import handling
     tailwindcss: {},
     autoprefixer: {},
   },
