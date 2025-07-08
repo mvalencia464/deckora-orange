@@ -37,7 +37,7 @@ const About: React.FC = () => {
             </h2>
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <p>
-                Coastal Custom Carpentry has been serving the Brunswick, St. Simons Island, Jekyll Island, and coastal Georgia area with exceptional
+                Horizon Carpentry has been serving the Brunswick, St. Simons Island, Jekyll Island, and coastal Georgia area with exceptional
                 custom carpentry and handyman services. From deck construction to general repairs, we bring years of experience
                 and unwavering commitment to quality craftsmanship.
               </p>
@@ -97,7 +97,7 @@ const About: React.FC = () => {
         {/* Values Section */}
         <div className="text-center mb-12">
           <h3 className="text-3xl font-bold text-gray-900 mb-4">
-            Why Choose Coastal Custom Carpentry?
+            Why Choose Horizon Carpentry?
           </h3>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We're skilled craftsmen who take pride in every project – from deck construction to complete

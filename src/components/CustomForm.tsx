@@ -327,7 +327,7 @@ const CustomForm: React.FC<CustomFormProps> = ({
                             required
                         />
                         <label htmlFor="consent" className="text-xs text-primary-100 leading-tight">
-                            I agree to receive text message updates from Coastal Custom Carpentry. Msg frequency varies (e.g., up to 4/month). Msg & data rates may apply. Reply STOP to unsubscribe at any time. View privacy & terms.
+                            I agree to receive text message updates from Horizon Carpentry. Msg frequency varies (e.g., up to 4/month). Msg & data rates may apply. Reply STOP to unsubscribe at any time. View privacy & terms.
                         </label>
                     </div>
                 </div>

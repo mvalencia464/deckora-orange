@@ -66,7 +66,7 @@ const BookingSection: React.FC = () => {
 
           {/* Why Choose Us Section */}
           <div className={`${gradients.primary} rounded-2xl p-8 text-white`}>
-            <h3 className="text-2xl font-bold mb-6 text-center">Why Choose Coastal Custom Carpentry?</h3>
+            <h3 className="text-2xl font-bold mb-6 text-center">Why Choose Horizon Carpentry?</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="w-5 h-5 text-primary-200 flex-shrink-0" />
