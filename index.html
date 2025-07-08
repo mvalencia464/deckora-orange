@@ -96,48 +96,88 @@
     }
     </script>
 
-    <!-- Chat Widget Script - Load with @import error suppression -->
+    <!-- Enhanced Error Suppression and Widget Loading -->
     <script>
-      // Suppress @import console errors from third-party widgets
+      // Comprehensive error suppression for third-party widgets
       (function() {
-        // Store original console.error
+        // Store original console methods
         const originalError = console.error;
+        const originalWarn = console.warn;
 
-        // Override console.error to filter out @import warnings
+        // Enhanced error filtering
+        function shouldSuppressError(message) {
+          const suppressPatterns = [
+            '@import rules are not allowed here',
+            'construct-stylesheets',
+            'constructable stylesheets',
+            'CSSStyleSheet.replace',
+            'adoptedStyleSheets'
+          ];
+          return suppressPatterns.some(pattern =>
+            message.toLowerCase().includes(pattern.toLowerCase())
+          );
+        }
+
+        // Override console.error with enhanced filtering
         console.error = function(...args) {
           const message = args.join(' ');
-          if (message.includes('@import rules are not allowed here') ||
-              message.includes('construct-stylesheets')) {
-            // Silently ignore @import errors from third-party widgets
+          if (shouldSuppressError(message)) {
+            // Silently ignore @import and stylesheet errors from third-party widgets
             return;
           }
           // Call original console.error for other errors
           originalError.apply(console, args);
         };
 
-        // Load HighLevel chat widget
-        try {
-          const script = document.createElement('script');
-          script.src = 'https://widgets.leadconnectorhq.com/loader.js';
-          script.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
-          script.setAttribute('data-widget-id', '6855e1482a1b4b63f8da16b6');
-          script.async = true;
-          script.onerror = function() {
-            console.warn('HighLevel chat widget script failed to load');
-          };
+        // Also override console.warn for completeness
+        console.warn = function(...args) {
+          const message = args.join(' ');
+          if (shouldSuppressError(message)) {
+            // Silently ignore @import warnings from third-party widgets
+            return;
+          }
+          // Call original console.warn for other warnings
+          originalWarn.apply(console, args);
+        };
 
-          // Restore original console.error after widget loads
-          script.onload = function() {
-            setTimeout(() => {
+        // Load HighLevel chat widget with enhanced error handling
+        function loadChatWidget() {
+          try {
+            const script = document.createElement('script');
+            script.src = 'https://widgets.leadconnectorhq.com/loader.js';
+            script.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+            script.setAttribute('data-widget-id', '6855e1482a1b4b63f8da16b6');
+            script.async = true;
+
+            script.onerror = function() {
+              console.log('HighLevel chat widget script failed to load');
+              // Restore original console methods on error
               console.error = originalError;
-            }, 2000); // Give widget time to initialize
-          };
+              console.warn = originalWarn;
+            };
 
-          document.head.appendChild(script);
-        } catch (e) {
-          console.warn('Error loading HighLevel chat widget script:', e);
-          // Restore original console.error on error
-          console.error = originalError;
+            script.onload = function() {
+              // Keep error suppression active for longer in production
+              setTimeout(() => {
+                console.error = originalError;
+                console.warn = originalWarn;
+              }, 5000); // Extended time for production environment
+            };
+
+            document.head.appendChild(script);
+          } catch (e) {
+            console.log('Error loading HighLevel chat widget script:', e);
+            // Restore original console methods on error
+            console.error = originalError;
+            console.warn = originalWarn;
+          }
+        }
+
+        // Load widget when DOM is ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', loadChatWidget);
+        } else {
+          loadChatWidget();
         }
       })();
     </script>
@@ -182,7 +222,36 @@
   <body>
     <div id="root"></div>
 
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Enhanced React App Loading -->
+    <script>
+      // Ensure proper initialization order
+      (function() {
+        // Mark HTML as loaded for FOUC prevention
+        function markAsLoaded() {
+          document.documentElement.classList.add('loaded');
+        }
+
+        // Load React app
+        function loadReactApp() {
+          const script = document.createElement('script');
+          script.type = 'module';
+          script.src = '/src/main.tsx';
+          script.onload = markAsLoaded;
+          script.onerror = function() {
+            console.error('Failed to load React app');
+            markAsLoaded(); // Still mark as loaded to show content
+          };
+          document.head.appendChild(script);
+        }
+
+        // Ensure DOM is ready before loading React
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', loadReactApp);
+        } else {
+          loadReactApp();
+        }
+      })();
+    </script>
 
     <!-- Form Embed Script - Load with error handling -->
     <script>
