@@ -96,12 +96,25 @@
     }
     </script>
 
-    <!-- Chat Widget Script -->
-    <script
-      src="https://widgets.leadconnectorhq.com/loader.js"
-      data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-      data-widget-id="6855e1482a1b4b63f8da16b6"
-    ></script>
+    <!-- Chat Widget Script - Load with error handling -->
+    <script>
+      // Load HighLevel chat widget with error handling
+      (function() {
+        try {
+          const script = document.createElement('script');
+          script.src = 'https://widgets.leadconnectorhq.com/loader.js';
+          script.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
+          script.setAttribute('data-widget-id', '6855e1482a1b4b63f8da16b6');
+          script.async = true;
+          script.onerror = function() {
+            console.warn('HighLevel chat widget script failed to load');
+          };
+          document.head.appendChild(script);
+        } catch (e) {
+          console.warn('Error loading HighLevel chat widget script:', e);
+        }
+      })();
+    </script>
 
     <!-- Minimal critical CSS -->
     <style>
