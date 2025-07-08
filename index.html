@@ -96,10 +96,26 @@
     }
     </script>
 
-    <!-- Chat Widget Script - Load with error handling -->
+    <!-- Chat Widget Script - Load with @import error suppression -->
     <script>
-      // Load HighLevel chat widget with error handling
+      // Suppress @import console errors from third-party widgets
       (function() {
+        // Store original console.error
+        const originalError = console.error;
+
+        // Override console.error to filter out @import warnings
+        console.error = function(...args) {
+          const message = args.join(' ');
+          if (message.includes('@import rules are not allowed here') ||
+              message.includes('construct-stylesheets')) {
+            // Silently ignore @import errors from third-party widgets
+            return;
+          }
+          // Call original console.error for other errors
+          originalError.apply(console, args);
+        };
+
+        // Load HighLevel chat widget
         try {
           const script = document.createElement('script');
           script.src = 'https://widgets.leadconnectorhq.com/loader.js';
@@ -109,9 +125,19 @@
           script.onerror = function() {
             console.warn('HighLevel chat widget script failed to load');
           };
+
+          // Restore original console.error after widget loads
+          script.onload = function() {
+            setTimeout(() => {
+              console.error = originalError;
+            }, 2000); // Give widget time to initialize
+          };
+
           document.head.appendChild(script);
         } catch (e) {
           console.warn('Error loading HighLevel chat widget script:', e);
+          // Restore original console.error on error
+          console.error = originalError;
         }
       })();
     </script>
