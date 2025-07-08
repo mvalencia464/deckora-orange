@@ -9,6 +9,33 @@ A modern React-based website template for construction and service businesses wi
 - 🖼️ **Image Upload** - Cloudflare Workers + R2 storage
 - 📱 **Responsive Design** - Mobile-first approach
 - ⚡ **Fast Performance** - Vite + React + TypeScript
+- 📞 **Always-Visible Phone Button** - Clickable branded phone button in navigation
+
+## Navigation Phone Button Implementation
+
+**IMPORTANT:** Always implement the navigation phone button to be visible on all screen sizes.
+
+### Required Implementation:
+```tsx
+{/* Phone Button - Always visible with responsive text */}
+<div className="flex items-center">
+  <a
+    href="tel:+15096209939"
+    className="flex items-center space-x-2 px-3 py-2 md:px-4 md:py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 bg-primary-600 hover:bg-primary-700 text-white"
+  >
+    <Phone className="w-4 h-4" />
+    <span className="hidden sm:inline">(509) 620-9939</span>
+    <span className="sm:hidden">Call</span>
+  </a>
+</div>
+```
+
+### Key Rules:
+- ✅ **Always use `flex items-center`** (NOT `hidden sm:flex`)
+- ✅ **Use direct Tailwind classes** like `bg-primary-600 hover:bg-primary-700`
+- ✅ **Responsive text**: `hidden sm:inline` for full number, `sm:hidden` for "Call"
+- ✅ **Always clickable** with `tel:` link
+- ❌ **Never use color utility objects** (causes className interpolation issues)
 
 ## HighLevel Integration
 
