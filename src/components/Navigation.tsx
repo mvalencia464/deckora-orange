@@ -189,8 +189,8 @@ const Navigation: React.FC = () => {
               }`}
             >
               <Phone className="w-4 h-4" />
-              <span className="hidden md:inline">(509) 620-9939</span>
-              <span className="md:hidden text-sm">Call</span>
+              <span className="hidden md:block">(509) 620-9939</span>
+              <span className="block md:hidden text-sm">Call</span>
             </a>
           </div>
         </div>
