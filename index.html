@@ -144,15 +144,42 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- Form Embed Script -->
-    <script src="https://link.msgsndr.com/js/form_embed.js" async></script>
+    <!-- Form Embed Script - Load with error handling -->
+    <script>
+      // Load HighLevel form script with error handling
+      (function() {
+        try {
+          const script = document.createElement('script');
+          script.src = 'https://link.msgsndr.com/js/form_embed.js';
+          script.async = true;
+          script.onerror = function() {
+            console.warn('HighLevel form script failed to load');
+          };
+          document.head.appendChild(script);
+        } catch (e) {
+          console.warn('Error loading HighLevel form script:', e);
+        }
+      })();
+    </script>
 
-    <!-- Vapi Voice AI Script -->
-    <script
-      src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js"
-      async
-      type="text/javascript"
-    ></script>
+    <!-- Vapi Voice AI Script - Load with error handling -->
+    <script>
+      // Load Vapi script with error handling
+      (function() {
+        try {
+          const script = document.createElement('script');
+          script.src = 'https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js';
+          script.async = true;
+          script.type = 'text/javascript';
+          script.onerror = function() {
+            console.warn('Vapi Voice AI script failed to load');
+          };
+          document.head.appendChild(script);
+        } catch (e) {
+          console.warn('Error loading Vapi Voice AI script:', e);
+        }
+      })();
+    </script>
 
     <!-- Custom script to handle form styling -->
     <script>

@@ -79,9 +79,7 @@ A modern React-based website template for construction and service businesses wi
 **CRITICAL:** Avoid `@import` console errors that break navigation:
 
 ```css
-/* ✅ CORRECT - Import fonts in CSS file */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
+/* ✅ CORRECT - No @import in CSS, use HTML link tags instead */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
