@@ -60,9 +60,9 @@ const Navigation: React.FC = () => {
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex items-center h-16">
           {/* Mobile menu button - moved to left for better accessibility */}
-          <div className="md:hidden">
+          <div className="md:hidden mr-4">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-md transition-all duration-300 hover:scale-105 ${
@@ -76,8 +76,8 @@ const Navigation: React.FC = () => {
             </button>
           </div>
 
-          {/* Logo - centered on mobile, left-aligned on desktop */}
-          <div className="flex-shrink-0 md:flex-shrink-0">
+          {/* Logo - left-aligned on desktop, centered on mobile */}
+          <div className="flex-shrink-0">
             <h1 className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${
               isScrolled ? 'text-primary-800' : 'text-white'
             }`}>
@@ -85,6 +85,9 @@ const Navigation: React.FC = () => {
               <span className="sm:hidden">Horizon</span>
             </h1>
           </div>
+
+          {/* Spacer to push navigation to the right */}
+          <div className="flex-1"></div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
