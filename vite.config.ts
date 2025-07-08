@@ -16,5 +16,7 @@ export default defineConfig({
         entryFileNames: 'assets/[name]-[hash].js',
       },
     },
+    // Ensure proper CSS handling
+    cssCodeSplit: false,
   },
 });
