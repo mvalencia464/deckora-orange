@@ -11,11 +11,102 @@ A modern React-based website template for construction and service businesses wi
 - ⚡ **Fast Performance** - Vite + React + TypeScript
 - 📞 **Always-Visible Phone Button** - Clickable branded phone button in navigation
 
-## Navigation Phone Button Implementation
+## Navigation Bar Implementation
 
-**IMPORTANT:** Always implement the navigation phone button to be visible on all screen sizes.
+**CRITICAL:** The navigation bar has been a recurring source of issues across mobile, desktop, and deployment. Follow these exact guidelines to prevent problems.
 
-### Required Implementation:
+### Navigation Layout Structure
+
+```tsx
+<nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+    <div className="flex items-center h-16">
+      {/* Mobile menu button - LEFT SIDE */}
+      <div className="md:hidden mr-4">
+        <button onClick={() => setIsOpen(!isOpen)}>
+          {/* Hamburger icon */}
+        </button>
+      </div>
+
+      {/* Logo - LEFT ALIGNED */}
+      <div className="flex-shrink-0">
+        <h1 className="text-xl md:text-2xl font-bold">
+          <span className="hidden md:inline">Full Company Name</span>
+          <span className="md:hidden">Short Name</span>
+        </h1>
+      </div>
+
+      {/* SPACER - CRITICAL FOR LAYOUT */}
+      <div className="flex-1"></div>
+
+      {/* Desktop Navigation - RIGHT SIDE */}
+      <div className="hidden md:block">
+        {/* Navigation items */}
+      </div>
+
+      {/* Phone Button - ALWAYS VISIBLE */}
+      <div className="flex items-center ml-4">
+        <a href="tel:+15096209939" className="bg-primary-600 hover:bg-primary-700">
+          <Phone className="w-4 h-4" />
+          <span className="hidden sm:inline">(509) 620-9939</span>
+          <span className="sm:hidden">Call</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+```
+
+### Critical Breakpoint Rules
+
+**ALWAYS use `md:` breakpoint for desktop/mobile split:**
+
+- ✅ **Logo**: `hidden md:inline` (desktop) / `md:hidden` (mobile)
+- ✅ **Mobile menu**: `md:hidden` (hide on desktop)
+- ✅ **Desktop nav**: `hidden md:block` (show on desktop)
+- ❌ **NEVER use `sm:` for main navigation breakpoints**
+
+### Layout Requirements
+
+1. **Flex Container**: `flex items-center h-16`
+2. **Spacer Div**: `<div className="flex-1"></div>` between logo and navigation
+3. **Mobile Button**: Always on left with `mr-4` spacing
+4. **Logo**: Left-aligned, responsive text
+5. **Phone Button**: Always visible with `flex items-center`
+
+### CSS Import Guidelines
+
+**CRITICAL:** Avoid `@import` console errors that break navigation:
+
+```css
+/* ✅ CORRECT - Import fonts in CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+```javascript
+// ✅ CORRECT - PostCSS config
+export default {
+  plugins: {
+    'postcss-import': {},  // REQUIRED for @import handling
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
+```html
+<!-- ✅ CORRECT - Only preconnect in HTML -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- ❌ REMOVE font stylesheet link from HTML -->
+```
+
+### Phone Button Implementation
+
 ```tsx
 {/* Phone Button - Always visible with responsive text */}
 <div className="flex items-center">
@@ -30,12 +121,25 @@ A modern React-based website template for construction and service businesses wi
 </div>
 ```
 
-### Key Rules:
-- ✅ **Always use `flex items-center`** (NOT `hidden sm:flex`)
-- ✅ **Use direct Tailwind classes** like `bg-primary-600 hover:bg-primary-700`
-- ✅ **Responsive text**: `hidden sm:inline` for full number, `sm:hidden` for "Call"
-- ✅ **Always clickable** with `tel:` link
-- ❌ **Never use color utility objects** (causes className interpolation issues)
+### Navigation Testing Checklist
+
+Before deployment, ALWAYS test:
+
+1. **Mobile View** (< 768px): Hamburger menu visible, short logo, phone button
+2. **Desktop View** (≥ 768px): Full logo visible, desktop nav, phone button
+3. **Console Errors**: No `@import` or CSS-related errors
+4. **Responsive Breakpoints**: Test at 767px and 768px specifically
+5. **Logo Display**: Full company name shows on desktop
+
+### Common Issues & Solutions
+
+| Issue | Cause | Solution |
+|-------|-------|----------|
+| Logo not showing on desktop | Wrong breakpoint (`sm:` instead of `md:`) | Use `hidden md:inline` |
+| @import console errors | Font imports in HTML | Move to CSS with postcss-import |
+| Layout misalignment | Missing spacer div | Add `<div className="flex-1"></div>` |
+| Mobile menu overlapping | Wrong z-index or positioning | Use `fixed` nav with proper z-index |
+| Phone button hidden | Using `hidden sm:flex` | Always use `flex items-center` |
 
 ## HighLevel Integration
 
