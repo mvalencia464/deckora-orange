@@ -234,7 +234,7 @@ const CustomForm: React.FC<CustomFormProps> = ({
     };
 
     return (
-        <div className="w-full max-w-md bg-primary-600 text-white rounded-2xl shadow-2xl p-6">
+        <div className="w-full max-w-sm bg-primary-600 text-white rounded-2xl shadow-2xl p-6">
             <h2 className="text-xl font-bold text-center mb-5">{title}</h2>
             <form onSubmit={handleSubmit}>
                 <div className="space-y-3">

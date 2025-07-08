@@ -81,8 +81,8 @@ const Navigation: React.FC = () => {
             <h1 className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${
               isScrolled ? 'text-primary-800' : 'text-white'
             }`}>
-              <span className="hidden sm:inline">Horizon Carpentry</span>
-              <span className="sm:hidden">Horizon</span>
+              <span className="hidden md:inline">Horizon Carpentry</span>
+              <span className="md:hidden">Horizon</span>
             </h1>
           </div>
 
