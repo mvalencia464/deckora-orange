@@ -64,7 +64,7 @@ const About: React.FC = () => {
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary-600">4.8★</div>
+                <div className="text-3xl font-bold text-primary-600">4.7★</div>
                 <div className="text-sm text-gray-600">Average Rating</div>
               </div>
             </div>

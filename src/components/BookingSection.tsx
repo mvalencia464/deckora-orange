@@ -78,7 +78,7 @@ const BookingSection: React.FC = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="w-5 h-5 text-primary-200 flex-shrink-0" />
-                <span className="text-primary-100">4.8-Star Rated</span>
+                <span className="text-primary-100">4.7-Star Rated</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="w-5 h-5 text-primary-200 flex-shrink-0" />

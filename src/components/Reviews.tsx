@@ -96,7 +96,7 @@ const Reviews: React.FC = () => {
             <div className="flex items-center space-x-2">
               {renderStars(5)}
               <span className={`text-2xl font-bold ${colors.neutral.text.darkest} ml-2`}>4.7</span>
-              <span className={colors.neutral.text.main}>• 12+ Reviews</span>
+              <span className={colors.neutral.text.main}>• 12 Google Reviews</span>
             </div>
           </div>
         </div>
