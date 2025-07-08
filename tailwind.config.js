@@ -37,19 +37,19 @@ export default {
     extend: {
       // Custom Color System - Easy to swap for different projects
       colors: {
-        // Primary Brand Color (Cyan for Professional/Modern)
+        // Primary Brand Color (Blue for Professional/Modern)
         // Change these values to switch the entire site's primary color
         primary: {
-          50: '#ecfeff',   // Very light cyan
-          100: '#cffafe',  // Light cyan
-          200: '#a5f3fc',  // Lighter cyan
-          300: '#67e8f9',  // Light-medium cyan
-          400: '#22d3ee',  // Medium cyan
-          500: '#06b6d4',  // Base cyan (cyan-500)
-          600: '#0891b2',  // Dark cyan (cyan-600) - Main brand color
-          700: '#0e7490',  // Darker cyan (cyan-700)
-          800: '#155e75',  // Very dark cyan
-          900: '#164e63',  // Darkest cyan
+          50: '#eff6ff',   // Very light blue
+          100: '#dbeafe',  // Light blue
+          200: '#bfdbfe',  // Lighter blue
+          300: '#93c5fd',  // Light-medium blue
+          400: '#60a5fa',  // Medium blue
+          500: '#3b82f6',  // Base blue (blue-500)
+          600: '#2563eb',  // Dark blue (blue-600) - Main brand color
+          700: '#1d4ed8',  // Darker blue (blue-700)
+          800: '#1e40af',  // Very dark blue
+          900: '#1e3a8a',  // Darkest blue
         },
         // Secondary Color (Lime for accents)
         // Used for secondary buttons, links, and accents
