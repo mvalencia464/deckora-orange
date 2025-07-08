@@ -96,91 +96,13 @@
     }
     </script>
 
-    <!-- Enhanced Error Suppression and Widget Loading -->
+    <!-- TEMPORARILY DISABLED: Chat Widget (Testing if this breaks CSS build) -->
+    <!--
     <script>
-      // Comprehensive error suppression for third-party widgets
-      (function() {
-        // Store original console methods
-        const originalError = console.error;
-        const originalWarn = console.warn;
-
-        // Enhanced error filtering
-        function shouldSuppressError(message) {
-          const suppressPatterns = [
-            '@import rules are not allowed here',
-            'construct-stylesheets',
-            'constructable stylesheets',
-            'CSSStyleSheet.replace',
-            'adoptedStyleSheets'
-          ];
-          return suppressPatterns.some(pattern =>
-            message.toLowerCase().includes(pattern.toLowerCase())
-          );
-        }
-
-        // Override console.error with enhanced filtering
-        console.error = function(...args) {
-          const message = args.join(' ');
-          if (shouldSuppressError(message)) {
-            // Silently ignore @import and stylesheet errors from third-party widgets
-            return;
-          }
-          // Call original console.error for other errors
-          originalError.apply(console, args);
-        };
-
-        // Also override console.warn for completeness
-        console.warn = function(...args) {
-          const message = args.join(' ');
-          if (shouldSuppressError(message)) {
-            // Silently ignore @import warnings from third-party widgets
-            return;
-          }
-          // Call original console.warn for other warnings
-          originalWarn.apply(console, args);
-        };
-
-        // Load HighLevel chat widget with enhanced error handling
-        function loadChatWidget() {
-          try {
-            const script = document.createElement('script');
-            script.src = 'https://widgets.leadconnectorhq.com/loader.js';
-            script.setAttribute('data-resources-url', 'https://widgets.leadconnectorhq.com/chat-widget/loader.js');
-            script.setAttribute('data-widget-id', '6855e1482a1b4b63f8da16b6');
-            script.async = true;
-
-            script.onerror = function() {
-              console.log('HighLevel chat widget script failed to load');
-              // Restore original console methods on error
-              console.error = originalError;
-              console.warn = originalWarn;
-            };
-
-            script.onload = function() {
-              // Keep error suppression active for longer in production
-              setTimeout(() => {
-                console.error = originalError;
-                console.warn = originalWarn;
-              }, 5000); // Extended time for production environment
-            };
-
-            document.head.appendChild(script);
-          } catch (e) {
-            console.log('Error loading HighLevel chat widget script:', e);
-            // Restore original console methods on error
-            console.error = originalError;
-            console.warn = originalWarn;
-          }
-        }
-
-        // Load widget when DOM is ready
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', loadChatWidget);
-        } else {
-          loadChatWidget();
-        }
-      })();
+      // Chat widget loading code temporarily commented out for testing
+      console.log('Chat widget temporarily disabled for CSS build testing');
     </script>
+    -->
 
     <!-- Minimal critical CSS -->
     <style>
