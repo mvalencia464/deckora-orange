@@ -19,13 +19,13 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundImage = "https://storage.googleapis.com/msgsndr/aQYV8jwYWM9za5egdIl2/media/686738689ca6fba4f4182282.webp",
-  title = "Brunswick's Trusted",
-  subtitle = "Custom Carpentry & Handyman Services",
-  description = "Serving Brunswick, St. Simons Island, Jekyll Island, and coastal Georgia with expert custom carpentry, deck building, handyman services, and home repairs. Licensed, insured, and locally trusted.",
+  title = "Brunswick's Premier",
+  subtitle = "Custom Carpentry",
+  description = "Transform your coastal home with expert craftsmanship that withstands Georgia's coastal climate. Serving Brunswick, St. Simons Island, Jekyll Island, and surrounding areas.",
   primaryButtonText = "Explore Our Services",
   secondaryButtonText = "View Our Work",
   formTitle = "Get Your Free Project Estimate",
-  reviewText = "Rated 4.8 Stars by 15+ Coastal Georgia Homeowners!",
+  reviewText = "4.8/5 Stars - 15+ Happy Coastal Georgia Families",
   reviewCount = "15+",
   useCustomForm = true,
   webhookUrl = import.meta.env.VITE_HIGHLEVEL_WEBHOOK_URL || "https://services.leadconnectorhq.com/hooks/XIihUR3iXWQYFe7UPY6Z/webhook-trigger/MUYIKA9a4YvwYMYgiOXL"

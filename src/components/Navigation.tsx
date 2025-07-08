@@ -90,11 +90,13 @@ const Navigation: React.FC = () => {
           <div className="hidden md:block">
             <div className="ml-6 flex items-baseline space-x-4">
               {/* Services Dropdown */}
-              <div className="relative">
+              <div
+                className="relative group"
+                onMouseEnter={() => setServicesOpen(true)}
+                onMouseLeave={() => setServicesOpen(false)}
+              >
                 <button
-                  onMouseEnter={() => setServicesOpen(true)}
-                  onMouseLeave={() => setServicesOpen(false)}
-                  className={`flex items-center px-3 py-2 text-sm font-medium transition-colors duration-300 hover:scale-105 ${
+                  className={`flex items-center px-6 py-4 text-sm font-medium transition-colors duration-300 hover:scale-105 ${
                     isScrolled
                       ? 'text-gray-700 hover:text-primary-600'
                       : 'text-white hover:text-primary-200'
@@ -104,33 +106,36 @@ const Navigation: React.FC = () => {
                   <ChevronDown className="w-4 h-4 ml-1" />
                 </button>
 
+                {/* Invisible hover bridge */}
+                <div className="absolute top-full left-0 w-full h-2 bg-transparent"></div>
+
                 {servicesOpen && (
-                  <div
-                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 z-50"
-                    onMouseEnter={() => setServicesOpen(true)}
-                    onMouseLeave={() => setServicesOpen(false)}
-                  >
-                    <div className="grid grid-cols-1 gap-1 p-2">
-                      {services.map((service, index) => (
-                        <a
-                          key={index}
-                          href="#"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-md transition-colors duration-200"
-                        >
-                          {service}
-                        </a>
-                      ))}
+                  <div className="absolute top-full left-0 pt-2 w-64 z-50">
+                    <div className="bg-white rounded-lg shadow-xl border border-gray-200">
+                      <div className="grid grid-cols-1 gap-1 p-2">
+                        {services.map((service, index) => (
+                          <a
+                            key={index}
+                            href="#"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-md transition-colors duration-200"
+                          >
+                            {service}
+                          </a>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}
               </div>
 
               {/* Locations Dropdown */}
-              <div className="relative">
+              <div
+                className="relative group"
+                onMouseEnter={() => setLocationsOpen(true)}
+                onMouseLeave={() => setLocationsOpen(false)}
+              >
                 <button
-                  onMouseEnter={() => setLocationsOpen(true)}
-                  onMouseLeave={() => setLocationsOpen(false)}
-                  className={`flex items-center px-3 py-2 text-sm font-medium transition-colors duration-300 hover:scale-105 ${
+                  className={`flex items-center px-6 py-4 text-sm font-medium transition-colors duration-300 hover:scale-105 ${
                     isScrolled
                       ? 'text-gray-700 hover:text-primary-600'
                       : 'text-white hover:text-primary-200'
@@ -140,22 +145,23 @@ const Navigation: React.FC = () => {
                   <ChevronDown className="w-4 h-4 ml-1" />
                 </button>
 
+                {/* Invisible hover bridge */}
+                <div className="absolute top-full left-0 w-full h-2 bg-transparent"></div>
+
                 {locationsOpen && (
-                  <div
-                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 z-50"
-                    onMouseEnter={() => setLocationsOpen(true)}
-                    onMouseLeave={() => setLocationsOpen(false)}
-                  >
-                    <div className="grid grid-cols-2 gap-1 p-2">
-                      {locations.map((location, index) => (
-                        <a
-                          key={index}
-                          href="#"
-                          className="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-md transition-colors duration-200"
-                        >
-                          {location}
-                        </a>
-                      ))}
+                  <div className="absolute top-full left-0 pt-2 w-64 z-50">
+                    <div className="bg-white rounded-lg shadow-xl border border-gray-200">
+                      <div className="grid grid-cols-2 gap-1 p-2">
+                        {locations.map((location, index) => (
+                          <a
+                            key={index}
+                            href="#"
+                            className="block px-3 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-600 rounded-md transition-colors duration-200"
+                          >
+                            {location}
+                          </a>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )}
