@@ -51,19 +51,19 @@ export default {
           800: '#1e40af',  // Very dark blue
           900: '#1e3a8a',  // Darkest blue
         },
-        // Secondary Color (Lime for accents)
+        // Secondary Color (Light Blue for accents)
         // Used for secondary buttons, links, and accents
         secondary: {
-          50: '#f7fee7',   // Very light lime
-          100: '#ecfccb',  // Light lime
-          200: '#d9f99d',  // Lighter lime
-          300: '#bef264',  // Light-medium lime
-          400: '#a3e635',  // Medium lime
-          500: '#84cc16',  // Base lime (lime-500)
-          600: '#65a30d',  // Dark lime (lime-600)
-          700: '#4d7c0f',  // Darker lime (lime-700)
-          800: '#365314',  // Very dark lime
-          900: '#1a2e05',  // Darkest lime
+          50: '#f0f9ff',   // Very light sky blue
+          100: '#e0f2fe',  // Light sky blue
+          200: '#bae6fd',  // Lighter sky blue
+          300: '#7dd3fc',  // Light-medium sky blue
+          400: '#38bdf8',  // Medium sky blue
+          500: '#0ea5e9',  // Base sky blue (sky-500)
+          600: '#0284c7',  // Dark sky blue (sky-600)
+          700: '#0369a1',  // Darker sky blue (sky-700)
+          800: '#075985',  // Very dark sky blue
+          900: '#0c4a6e',  // Darkest sky blue
         },
         // Neutral colors (grays) - these typically stay the same across projects
         neutral: {

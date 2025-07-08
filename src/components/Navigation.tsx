@@ -61,12 +61,28 @@ const Navigation: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className={`text-2xl font-bold transition-colors duration-300 ${
+          {/* Mobile menu button - moved to left for better accessibility */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className={`p-2 rounded-md transition-all duration-300 hover:scale-105 ${
+                isScrolled
+                  ? 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
+                  : 'text-white hover:text-primary-200 hover:bg-white/10'
+              }`}
+              aria-label="Toggle mobile menu"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+
+          {/* Logo - centered on mobile, left-aligned on desktop */}
+          <div className="flex-shrink-0 md:flex-shrink-0">
+            <h1 className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${
               isScrolled ? 'text-primary-800' : 'text-white'
             }`}>
-              Coastal Custom Carpentry
+              <span className="hidden sm:inline">Coastal Custom Carpentry</span>
+              <span className="sm:hidden">Coastal Custom</span>
             </h1>
           </div>
 
@@ -162,99 +178,106 @@ const Navigation: React.FC = () => {
             </div>
           </div>
 
-          {/* Phone Button - Branded with primary colors */}
+          {/* Phone Button - Optimized for mobile */}
           <div className="flex items-center">
             <a
               href="tel:+15096209939"
-              className={`flex items-center space-x-2 px-3 py-2 md:px-4 md:py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 ${
+              className={`flex items-center space-x-1 md:space-x-2 px-2 py-2 md:px-4 md:py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 ${
                 isScrolled
                   ? 'bg-primary-600 hover:bg-primary-700 text-white'
                   : 'bg-primary-600 hover:bg-primary-700 text-white backdrop-blur-sm'
               }`}
             >
               <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline lg:inline">(509) 620-9939</span>
-              <span className="sm:hidden">Call</span>
+              <span className="hidden md:inline">(509) 620-9939</span>
+              <span className="md:hidden text-sm">Call</span>
             </a>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden ml-2">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-md transition-colors duration-300 ${
-                isScrolled
-                  ? 'text-gray-700 hover:text-primary-600'
-                  : 'text-white hover:text-primary-200'
-              }`}
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Enhanced Design */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg rounded-lg mt-2 max-h-96 overflow-y-auto">
+          <>
+            {/* Backdrop */}
+            <div
+              className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+              onClick={() => setIsOpen(false)}
+            />
 
-              {/* Services Section */}
-              <div className="border-b border-gray-200 pb-3 mb-3">
-                <h3 className="px-3 py-2 text-sm font-semibold text-gray-500 uppercase tracking-wider">Services</h3>
-                <div className="grid grid-cols-1 gap-1">
-                  {services.map((service, index) => (
+            {/* Mobile Menu */}
+            <div className="md:hidden relative z-50">
+              <div className="absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-200 max-h-[80vh] overflow-y-auto">
+              <div className="px-4 py-4 space-y-4">
+                {/* Quick Actions */}
+                <div className="flex space-x-3 pb-4 border-b border-gray-200">
+                  <a
+                    href="tel:+15096209939"
+                    className="flex-1 flex items-center justify-center space-x-2 px-4 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-bold transition-colors duration-300"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <Phone className="w-4 h-4" />
+                    <span>Call Now</span>
+                  </a>
+                  <a
+                    href="#contact"
+                    className="flex-1 flex items-center justify-center px-4 py-3 border-2 border-primary-600 text-primary-600 hover:bg-primary-50 rounded-lg font-bold transition-colors duration-300"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Get Quote
+                  </a>
+                </div>
+
+                {/* Main Navigation */}
+                <div className="space-y-1">
+                  {navItems.map((item) => (
                     <a
-                      key={index}
-                      href="#"
-                      className="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md text-sm transition-colors duration-300"
+                      key={item.name}
+                      href={item.href}
+                      className="block px-4 py-3 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-lg text-lg font-medium transition-colors duration-300"
                       onClick={() => setIsOpen(false)}
                     >
-                      {service}
+                      {item.name}
                     </a>
                   ))}
                 </div>
-              </div>
 
-              {/* Locations Section */}
-              <div className="border-b border-gray-200 pb-3 mb-3">
-                <h3 className="px-3 py-2 text-sm font-semibold text-gray-500 uppercase tracking-wider">Locations</h3>
-                <div className="grid grid-cols-2 gap-1">
-                  {locations.map((location, index) => (
-                    <a
-                      key={index}
-                      href="#"
-                      className="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md text-sm transition-colors duration-300"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {location}
-                    </a>
-                  ))}
+                {/* Services Section */}
+                <div className="border-t border-gray-200 pt-4">
+                  <h3 className="px-4 py-2 text-sm font-semibold text-gray-500 uppercase tracking-wider">Our Services</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    {services.map((service, index) => (
+                      <a
+                        key={index}
+                        href="#"
+                        className="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md text-sm transition-colors duration-300"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {service}
+                      </a>
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              {/* Regular Nav Items */}
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className={`block px-3 py-2 ${colors.neutral.text.dark} ${colors.primary.hover.text.main} hover:bg-primary-50 rounded-md text-base font-medium transition-colors duration-300`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
-
-              <div className="border-t pt-3 mt-3">
-                <a
-                  href="tel:+15096209939"
-                  className="flex items-center space-x-2 px-3 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-bold transition-colors duration-300"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span>(509) 620-9939</span>
-                </a>
+                {/* Service Areas Section */}
+                <div className="border-t border-gray-200 pt-4">
+                  <h3 className="px-4 py-2 text-sm font-semibold text-gray-500 uppercase tracking-wider">Service Areas</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    {locations.map((location, index) => (
+                      <a
+                        key={index}
+                        href="#"
+                        className="block px-3 py-2 text-gray-700 hover:text-primary-600 hover:bg-primary-50 rounded-md text-sm transition-colors duration-300"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {location}
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+            </div>
+          </>
         )}
       </div>
     </nav>
