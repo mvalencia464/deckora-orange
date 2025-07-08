@@ -7,13 +7,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  css: {
-    postcss: {
-      plugins: [],
-    },
-  },
   build: {
-    cssCodeSplit: false,
     rollupOptions: {
       output: {
         // Ensure CSS and JS files have unique hashes for cache busting
