@@ -78,12 +78,11 @@ const Navigation: React.FC = () => {
 
           {/* Logo - left-aligned on desktop, centered on mobile */}
           <div className="flex-shrink-0">
-            <h1 className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${
-              isScrolled ? 'text-primary-800' : 'text-white'
-            }`}>
-              <span className="hidden md:inline">Horizon Carpentry</span>
-              <span className="md:hidden">Horizon</span>
-            </h1>
+            <img
+              src="https://img.stokeleads.com/logo2.png"
+              alt="Horizon Carpentry"
+              className="h-10 md:h-12 w-auto transition-all duration-300"
+            />
           </div>
 
           {/* Spacer to push navigation to the right */}
@@ -91,7 +90,7 @@ const Navigation: React.FC = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-6 flex items-baseline space-x-4">
+            <div className="ml-6 flex items-baseline space-x-8">
               {/* Services Dropdown */}
               <div
                 className="relative group"
@@ -188,7 +187,7 @@ const Navigation: React.FC = () => {
           </div>
 
           {/* Phone Button - Optimized for mobile */}
-          <div className="flex items-center">
+          <div className="flex items-center ml-8">
             <a
               href="tel:+15096209939"
               className={`flex items-center space-x-1 md:space-x-2 px-2 py-2 md:px-4 md:py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 ${

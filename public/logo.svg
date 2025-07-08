@@ -1,0 +1,23 @@
+<svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mountain/roof silhouette -->
+  <path d="M100 120 L200 40 L300 80 L400 20 L500 60 L600 30 L700 100 L700 120 Z" fill="currentColor"/>
+
+  <!-- House outline with window -->
+  <path d="M250 120 L350 60 L450 120 L450 160 L250 160 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+
+  <!-- Window grid -->
+  <rect x="320" y="90" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <rect x="355" y="90" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <rect x="320" y="125" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <rect x="355" y="125" width="25" height="25" fill="none" stroke="currentColor" stroke-width="1.5"/>
+
+  <!-- HORIZON text -->
+  <g fill="currentColor" font-family="Arial, sans-serif" font-weight="bold" font-size="48">
+    <text x="50" y="220">HORIZON</text>
+  </g>
+
+  <!-- CARPENTRY text -->
+  <g fill="currentColor" font-family="Arial, sans-serif" font-weight="bold" font-size="32">
+    <text x="50" y="260">CARPENTRY</text>
+  </g>
+</svg>
