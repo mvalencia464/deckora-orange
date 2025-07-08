@@ -163,23 +163,23 @@ const Navigation: React.FC = () => {
           </div>
 
           {/* Phone Button - Branded with primary colors */}
-          <div className="hidden sm:flex items-center">
+          <div className="flex items-center">
             <a
               href="tel:+15096209939"
-              className={`flex items-center space-x-2 px-4 py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 ${
+              className={`flex items-center space-x-2 px-3 py-2 md:px-4 md:py-3 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 ${
                 isScrolled
                   ? 'bg-primary-600 hover:bg-primary-700 text-white'
                   : 'bg-primary-600 hover:bg-primary-700 text-white backdrop-blur-sm'
               }`}
             >
               <Phone className="w-4 h-4" />
-              <span className="hidden lg:inline">(509) 620-9939</span>
-              <span className="lg:hidden">Call</span>
+              <span className="hidden sm:inline lg:inline">(509) 620-9939</span>
+              <span className="sm:hidden">Call</span>
             </a>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden ml-2">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-md transition-colors duration-300 ${
