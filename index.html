@@ -144,36 +144,7 @@
   <body>
     <div id="root"></div>
 
-    <!-- Enhanced React App Loading -->
-    <script>
-      // Ensure proper initialization order
-      (function() {
-        // Mark HTML as loaded for FOUC prevention
-        function markAsLoaded() {
-          document.documentElement.classList.add('loaded');
-        }
-
-        // Load React app
-        function loadReactApp() {
-          const script = document.createElement('script');
-          script.type = 'module';
-          script.src = '/src/main.tsx';
-          script.onload = markAsLoaded;
-          script.onerror = function() {
-            console.error('Failed to load React app');
-            markAsLoaded(); // Still mark as loaded to show content
-          };
-          document.head.appendChild(script);
-        }
-
-        // Ensure DOM is ready before loading React
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', loadReactApp);
-        } else {
-          loadReactApp();
-        }
-      })();
-    </script>
+    <script type="module" src="/src/main.tsx"></script>
 
     <!-- Form Embed Script - Load with error handling -->
     <script>
