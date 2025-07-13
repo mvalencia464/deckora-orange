@@ -24,14 +24,14 @@ const TermsOfService: React.FC = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Agreement to Terms</h2>
             <p className="text-gray-700">
-              By accessing and using Horizon Carpentry & Handyman's website and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
+              By accessing and using Horizon Carpentry's website and services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">Services</h2>
             <p className="text-gray-700 mb-4">
-              Horizon Carpentry & Handyman provides carpentry, handyman, and related services including:
+              Horizon Carpentry provides carpentry, handyman, and related services including:
             </p>
             <ul className="list-disc pl-6 text-gray-700">
               <li>Deck construction and repair</li>
@@ -130,9 +130,9 @@ const TermsOfService: React.FC = () => {
               For questions about these Terms of Service, contact us:
             </p>
             <div className="bg-blue-50 p-4 rounded-lg">
-              <p className="text-gray-700"><strong>Email:</strong> gibbywalker224@gmail.com</p>
+              <p className="text-gray-700"><strong>Email:</strong> mauricio@stokeleads.com</p>
               <p className="text-gray-700"><strong>Phone:</strong> (509) 620-9939</p>
-              <p className="text-gray-700"><strong>Address:</strong> 166 Spring St, Fairmount, GA 30139</p>
+              <p className="text-gray-700"><strong>Address:</strong> [YOUR ADDRESS], [YOUR LOCATION]</p>
             </div>
           </section>
 

@@ -19,13 +19,13 @@ interface HeroSectionProps {
 
 const HeroSection: React.FC<HeroSectionProps> = ({
   backgroundImage = "https://storage.googleapis.com/msgsndr/aQYV8jwYWM9za5egdIl2/media/686738689ca6fba4f4182282.webp",
-  title = "Brunswick's Premier",
+  title = "[YOUR LOCATION]'s Premier",
   subtitle = "Custom Carpentry",
-  description = "Transform your coastal home with expert craftsmanship that withstands Georgia's coastal climate. Serving Brunswick, St. Simons Island, Jekyll Island, and surrounding areas.",
+  description = "Transform your home with expert craftsmanship that stands the test of time. Serving [YOUR LOCATION], [AREA 1], [AREA 2], and surrounding areas.",
   primaryButtonText = "Explore Our Services",
   secondaryButtonText = "View Our Work",
   formTitle = "Get Your Free Project Estimate",
-  reviewText = "4.7/5 Stars - 12 Google Reviews",
+  reviewText = "5.0/5 Stars - 217 Google Reviews",
   reviewCount = "15+",
   useCustomForm = true,
   webhookUrl = import.meta.env.VITE_HIGHLEVEL_WEBHOOK_URL || "https://services.leadconnectorhq.com/hooks/XIihUR3iXWQYFe7UPY6Z/webhook-trigger/MUYIKA9a4YvwYMYgiOXL"
@@ -48,7 +48,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           
           {/* Left Content - Always visible */}
-          <div className="text-center md:text-left space-y-8">
+          <div className="text-left space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 {title}
@@ -61,7 +61,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Action Buttons - Show on all devices */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-start">
               <a
                 href="#gallery"
                 className="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-center"
@@ -78,7 +78,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
             {/* Social Proof - Always visible */}
             <div className="bg-primary-800/30 backdrop-blur-sm rounded-xl p-6 border border-primary-400/20">
-              <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+              <div className="flex items-center justify-start gap-2 mb-2">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                 ))}

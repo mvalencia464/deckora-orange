@@ -37,7 +37,7 @@ const About: React.FC = () => {
             </h2>
             <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
               <p>
-                Horizon Carpentry has been serving the Brunswick, St. Simons Island, Jekyll Island, and coastal Georgia area with exceptional
+                Horizon Carpentry has been serving [YOUR LOCATION], [AREA 1], [AREA 2], and surrounding areas with exceptional
                 custom carpentry and handyman services. From deck construction to general repairs, we bring years of experience
                 and unwavering commitment to quality craftsmanship.
               </p>
@@ -64,7 +64,7 @@ const About: React.FC = () => {
                 <div className="text-sm text-gray-600">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary-600">4.7★</div>
+                <div className="text-3xl font-bold text-primary-600">5.0★</div>
                 <div className="text-sm text-gray-600">Average Rating</div>
               </div>
             </div>

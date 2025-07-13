@@ -17,25 +17,25 @@ const Reviews: React.FC = () => {
     {
       id: 1,
       name: "Rhett Thompson",
-      location: "Marietta, GA",
+      location: "[AREA 1]",
       rating: 5,
-      text: "I hired Mike and his crew for a complex rebuild of my residential home in Marietta. Initially, Mike was hired to handle the intricate framing requirements to change my ranch house into a three story 6,000 sq ft home. The results were exceptional. Afterwards, windows, doors, trim, etc. elements were added to the project upon the excellence of their capabilities. Multitalented and good quality -- recommended for sure.",
+      text: "I hired the team for a complex rebuild of my residential home. Initially, they were hired to handle the intricate framing requirements to change my ranch house into a three story 6,000 sq ft home. The results were exceptional. Afterwards, windows, doors, trim, etc. elements were added to the project upon the excellence of their capabilities. Multitalented and good quality -- recommended for sure.",
       date: "2 years ago",
       avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     },
     {
       id: 2,
       name: "Michael Morris",
-      location: "Fairmount, GA",
+      location: "[AREA 2]",
       rating: 5,
-      text: "Mike Walker and his team did some work on our home and they did an excellent job! Highly recommend them!",
+      text: "The team did some work on our home and they did an excellent job! Highly recommend them!",
       date: "5 days ago",
       avatar: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     },
     {
       id: 3,
       name: "Amanda Jenkins",
-      location: "North Georgia",
+      location: "[YOUR LOCATION]",
       rating: 5,
       text: "Awesome fast service. Very professional I hired them to put up a sign for me and they not only got it up in the day I called them it looked awesome. If you need work done I highly recommend them.",
       date: "2 years ago",
@@ -44,25 +44,25 @@ const Reviews: React.FC = () => {
     {
       id: 4,
       name: "David Are",
-      location: "North Georgia",
+      location: "[AREA 1]",
       rating: 5,
-      text: "Excellent construction of a large deck on a steep lot. His ability to work different shapes into my deck was key to a great outcome. Strongly recommend!!!",
+      text: "Excellent construction of a large deck on a steep lot. Their ability to work different shapes into my deck was key to a great outcome. Strongly recommend!!!",
       date: "2 years ago",
       avatar: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     },
     {
       id: 5,
       name: "John Evans",
-      location: "North Georgia",
+      location: "[AREA 2]",
       rating: 5,
-      text: "Mike does great work at a fair price. Highly recommended!",
+      text: "They do great work at a fair price. Highly recommended!",
       date: "1 year ago",
       avatar: "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
     },
     {
       id: 6,
       name: "Beth Hillhouse",
-      location: "North Georgia",
+      location: "[YOUR LOCATION]",
       rating: 5,
       text: "Very happy with the work they completed. They were very helpful and knowledgeable. I would highly recommend using their services.",
       date: "2 years ago",
@@ -95,8 +95,8 @@ const Reviews: React.FC = () => {
           <div className={`inline-flex items-center ${colors.primary.bg.lightest} px-6 py-3 rounded-full`}>
             <div className="flex items-center space-x-2">
               {renderStars(5)}
-              <span className={`text-2xl font-bold ${colors.neutral.text.darkest} ml-2`}>4.7</span>
-              <span className={colors.neutral.text.main}>• 12 Google Reviews</span>
+              <span className={`text-2xl font-bold ${colors.neutral.text.darkest} ml-2`}>5.0</span>
+              <span className={colors.neutral.text.main}>• 217 Google Reviews</span>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@ const Reviews: React.FC = () => {
               Ready to Join Our Happy Customers?
             </h3>
             <p className="text-primary-100 mb-6 max-w-2xl mx-auto">
-              Experience the same exceptional service and craftsmanship that has earned us 4.7-star reviews.
+              Experience the same exceptional service and craftsmanship that has earned us 5.0-star reviews.
               Get your free consultation today!
             </p>
             <a

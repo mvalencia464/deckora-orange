@@ -278,7 +278,10 @@
   /* Force chat widget to viewport positioning regardless of parent containers */
   html body * div[data-widget-id="6855e1482a1b4b63f8da16b6"],
   html body * script[data-widget-id="6855e1482a1b4b63f8da16b6"] + div,
-  div[data-widget-id="6855e1482a1b4b63f8da16b6"] {
+  div[data-widget-id="6855e1482a1b4b63f8da16b6"],
+  html body * div[data-widget-id="66b1878b92c831569eb2c07a"],
+  html body * script[data-widget-id="66b1878b92c831569eb2c07a"] + div,
+  div[data-widget-id="66b1878b92c831569eb2c07a"] {
     position: fixed !important;
     bottom: 20px !important;
     right: 20px !important;
@@ -480,7 +483,12 @@ html body div[data-widget-id="6855e1482a1b4b63f8da16b6"],
 html body * div[data-widget-id="6855e1482a1b4b63f8da16b6"],
 html body div[data-widget-id="6855e1482a1b4b63f8da16b6"] *,
 body div[data-widget-id="6855e1482a1b4b63f8da16b6"],
-div[data-widget-id="6855e1482a1b4b63f8da16b6"] {
+div[data-widget-id="6855e1482a1b4b63f8da16b6"],
+html body div[data-widget-id="66b1878b92c831569eb2c07a"],
+html body * div[data-widget-id="66b1878b92c831569eb2c07a"],
+html body div[data-widget-id="66b1878b92c831569eb2c07a"] *,
+body div[data-widget-id="66b1878b92c831569eb2c07a"],
+div[data-widget-id="66b1878b92c831569eb2c07a"] {
   position: fixed !important;
   bottom: 20px !important;
   right: 20px !important;

@@ -37,19 +37,19 @@ export default {
     extend: {
       // Custom Color System - Easy to swap for different projects
       colors: {
-        // Primary Brand Color (Blue for Professional/Modern)
+        // Primary Brand Color (Modern Orange for Professional/Modern)
         // Change these values to switch the entire site's primary color
         primary: {
-          50: '#eff6ff',   // Very light blue
-          100: '#dbeafe',  // Light blue
-          200: '#bfdbfe',  // Lighter blue
-          300: '#93c5fd',  // Light-medium blue
-          400: '#60a5fa',  // Medium blue
-          500: '#3b82f6',  // Base blue (blue-500)
-          600: '#2563eb',  // Dark blue (blue-600) - Main brand color
-          700: '#1d4ed8',  // Darker blue (blue-700)
-          800: '#1e40af',  // Very dark blue
-          900: '#1e3a8a',  // Darkest blue
+          50: '#fff7ed',   // Very light orange
+          100: '#ffedd5',  // Light orange
+          200: '#fed7aa',  // Lighter orange
+          300: '#fdba74',  // Light-medium orange
+          400: '#fb923c',  // Medium orange
+          500: '#f97316',  // Base orange (orange-500)
+          600: '#ea580c',  // Dark orange (orange-600) - Main brand color
+          700: '#c2410c',  // Darker orange (orange-700)
+          800: '#9a3412',  // Very dark orange
+          900: '#7c2d12',  // Darkest orange
         },
         // Secondary Color (Light Blue for accents)
         // Used for secondary buttons, links, and accents

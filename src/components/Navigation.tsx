@@ -29,9 +29,9 @@ const Navigation: React.FC = () => {
   ];
 
   const locations = [
-    'Brunswick', 'St. Simons Island', 'Jekyll Island', 'Sea Island',
-    'Glynn County', 'Camden County', 'McIntosh County', 'Brantley County',
-    'Waycross', 'Kingsland', 'Woodbine', 'Darien'
+    '[YOUR LOCATION]', '[AREA 1]', '[AREA 2]', '[AREA 3]',
+    '[AREA 4]', '[AREA 5]', '[AREA 6]', '[AREA 7]',
+    '[AREA 8]', '[AREA 9]', '[AREA 10]', '[AREA 11]'
   ];
 
   const services = [

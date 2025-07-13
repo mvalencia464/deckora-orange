@@ -8,7 +8,7 @@ const SocialProof: React.FC = () => {
       icon: Users,
       number: "50+",
       label: "Happy Customers",
-      description: "Satisfied homeowners across North Georgia"
+      description: "Satisfied homeowners across [YOUR LOCATION]"
     },
     {
       icon: Calendar,
@@ -24,7 +24,7 @@ const SocialProof: React.FC = () => {
     },
     {
       icon: Award,
-      number: "4.7",
+      number: "5.0",
       label: "Star Rating",
       description: "Average rating from Google reviews"
     }
@@ -40,9 +40,9 @@ const SocialProof: React.FC = () => {
   ];
 
   const serviceAreas = [
-    "Fairmount", "La Fayette", "Dalton", "Rome",
-    "Calhoun", "Chatsworth", "Summerville", "Trion",
-    "Ringgold", "Chickamauga", "Rossville", "Fort Oglethorpe"
+    "[YOUR LOCATION]", "[AREA 1]", "[AREA 2]", "[AREA 3]",
+    "[AREA 4]", "[AREA 5]", "[AREA 6]", "[AREA 7]",
+    "[AREA 8]", "[AREA 9]", "[AREA 10]", "[AREA 11]"
   ];
 
   return (
@@ -51,7 +51,7 @@ const SocialProof: React.FC = () => {
         {/* Stats Section */}
         <div className="text-center mb-16">
           <h2 className={`text-4xl font-bold ${colors.neutral.text.darkest} mb-4`}>
-            Trusted by North Georgia Homeowners
+            Trusted by [YOUR LOCATION] Homeowners
           </h2>
           <p className={`text-xl ${colors.neutral.text.main} max-w-3xl mx-auto`}>
             Our track record speaks for itself. We've built our reputation one project at a time.
@@ -112,10 +112,10 @@ const SocialProof: React.FC = () => {
           {/* Service Areas */}
           <div className="bg-white rounded-2xl p-8 shadow-lg">
             <h3 className={`text-2xl font-bold ${colors.neutral.text.darkest} mb-6`}>
-              Serving North Georgia
+              Serving [YOUR LOCATION]
             </h3>
             <p className={`${colors.neutral.text.main} mb-6`}>
-              We proudly serve homeowners throughout North Georgia with professional carpentry and handyman services.
+              We proudly serve homeowners throughout [YOUR LOCATION] with professional carpentry and handyman services.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {serviceAreas.map((area, index) => (

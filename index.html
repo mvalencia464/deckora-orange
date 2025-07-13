@@ -13,14 +13,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <title>Horizon Carpentry - Brunswick GA Carpenter & Custom Carpentry Services</title>
+    <title>Horizon Carpentry - [YOUR LOCATION] Carpenter & Custom Carpentry Services</title>
     <meta
       name="description"
-      content="Professional custom carpentry and handyman services in Brunswick, Georgia and surrounding coastal areas. Deck construction, home repairs, bathroom remodeling, and quality craftsmanship. Licensed, insured, and locally trusted."
+      content="Professional custom carpentry and handyman services in [YOUR LOCATION] and surrounding areas. Deck construction, home repairs, bathroom remodeling, and quality craftsmanship. Licensed, insured, and locally trusted."
     />
 
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="Horizon Carpentry, Brunswick GA carpenter, handyman Brunswick Georgia, deck builder coastal Georgia, home repairs Brunswick, bathroom remodeling Brunswick, construction company coastal Georgia" />
+    <meta name="keywords" content="Horizon Carpentry, [YOUR LOCATION] carpenter, handyman [YOUR LOCATION], deck builder [YOUR LOCATION], home repairs [YOUR LOCATION], bathroom remodeling [YOUR LOCATION], construction company [YOUR LOCATION]" />
     <meta name="author" content="Horizon Carpentry" />
     <meta name="robots" content="index, follow" />
 
@@ -31,13 +31,13 @@
       "@type": "LocalBusiness",
       "name": "Horizon Carpentry",
       "image": "https://storage.googleapis.com/msgsndr/BK5WOlszHMZB0udM7qC1/media/6855f48942e8ef583415f8e8.webp",
-      "description": "Professional custom carpentry and handyman services in Brunswick, Georgia and surrounding coastal areas",
+      "description": "Professional custom carpentry and handyman services in [YOUR LOCATION] and surrounding areas",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "702 Old CCC Rd",
-        "addressLocality": "Brunswick",
-        "addressRegion": "GA",
-        "postalCode": "31523",
+        "streetAddress": "[YOUR ADDRESS]",
+        "addressLocality": "[YOUR LOCATION]",
+        "addressRegion": "[STATE]",
+        "postalCode": "[ZIP CODE]",
         "addressCountry": "US"
       },
       "telephone": "(509) 620-9939",
@@ -96,13 +96,30 @@
     }
     </script>
 
-    <!-- TEMPORARILY DISABLED: Chat Widget (Testing if this breaks CSS build) -->
-    <!--
+    <!-- LeadConnector Chat Widget - Loaded with delayed timing to prevent CSS conflicts -->
     <script>
-      // Chat widget loading code temporarily commented out for testing
-      console.log('Chat widget temporarily disabled for CSS build testing');
+      // Load chat widget after a short delay to ensure site CSS is fully loaded
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          try {
+            // Create and append the LeadConnector script directly
+            const script = document.createElement('script');
+            script.src = 'https://beta.leadconnectorhq.com/loader.js';
+            script.setAttribute('data-resources-url', 'https://beta.leadconnectorhq.com/chat-widget/loader.js');
+            script.setAttribute('data-widget-id', '66b1878b92c831569eb2c07a');
+            script.onload = function() {
+              console.log('LeadConnector chat widget loaded');
+            };
+            script.onerror = function() {
+              console.warn('LeadConnector chat widget failed to load');
+            };
+            document.body.appendChild(script);
+          } catch (e) {
+            console.warn('Error loading chat widget:', e);
+          }
+        }, 1000); // 1 second delay
+      });
     </script>
-    -->
 
     <!-- Minimal critical CSS -->
     <style>

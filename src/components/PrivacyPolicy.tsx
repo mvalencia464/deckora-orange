@@ -93,9 +93,9 @@ const PrivacyPolicy: React.FC = () => {
               If you have any questions about this Privacy Policy, please contact us:
             </p>
             <div className="bg-blue-50 p-4 rounded-lg">
-              <p className="text-gray-700"><strong>Email:</strong> gibbywalker224@gmail.com</p>
+              <p className="text-gray-700"><strong>Email:</strong> mauricio@stokeleads.com</p>
               <p className="text-gray-700"><strong>Phone:</strong> (509) 620-9939</p>
-              <p className="text-gray-700"><strong>Address:</strong> 166 Spring St, Fairmount, GA 30139</p>
+              <p className="text-gray-700"><strong>Address:</strong> [YOUR ADDRESS], [YOUR LOCATION]</p>
             </div>
           </section>
 
