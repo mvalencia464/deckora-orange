@@ -68,12 +68,11 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a
-                    href="#"
-                    className={`${colors.neutral.text.lighter} hover:text-white transition-colors duration-300`}
+                  <span
+                    className={`${colors.neutral.text.lighter} hover:text-white transition-colors duration-300 cursor-default`}
                   >
                     {service}
-                  </a>
+                  </span>
                 </li>
               ))}
             </ul>
@@ -85,12 +84,11 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               {serviceAreas.map((area, index) => (
                 <li key={index}>
-                  <a
-                    href="#"
-                    className={`${colors.neutral.text.lighter} hover:text-white transition-colors duration-300`}
+                  <span
+                    className={`${colors.neutral.text.lighter} hover:text-white transition-colors duration-300 cursor-default`}
                   >
                     {area}
-                  </a>
+                  </span>
                 </li>
               ))}
             </ul>
@@ -152,9 +150,9 @@ const Footer: React.FC = () => {
               <a href="/terms" className={`${colors.neutral.text.light} hover:text-white transition-colors duration-300`}>
                 Terms of Service
               </a>
-              <a href="#" className={`${colors.neutral.text.light} hover:text-white transition-colors duration-300`}>
+              <span className={`${colors.neutral.text.light} hover:text-white transition-colors duration-300 cursor-default`}>
                 License Info
-              </a>
+              </span>
             </div>
           </div>
 

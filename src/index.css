@@ -184,6 +184,11 @@
     border: none !important;
     outline: none !important;
     background: white !important;
+    /* Ensure proper interaction on all devices */
+    pointer-events: auto !important;
+    touch-action: auto !important;
+    /* Prevent any interference from parent elements */
+    isolation: isolate;
   }
 
   /* Mobile optimization for forms */
@@ -194,6 +199,12 @@
 
     iframe[src*="widget/booking"] {
       min-height: 600px;
+      /* Ensure proper touch interaction on mobile */
+      touch-action: auto !important;
+      pointer-events: auto !important;
+      /* Prevent any overlay issues */
+      position: relative !important;
+      z-index: 1 !important;
     }
   }
 
@@ -206,6 +217,16 @@
     iframe[src*="widget/booking"] {
       height: 700px !important;
     }
+  }
+
+  /* Ensure booking iframe container allows proper interaction */
+  div:has(iframe[src*="widget/booking"]),
+  div[class*="booking"],
+  #VK5p3BfnXq2LNHpzyHj6_booking {
+    pointer-events: auto !important;
+    touch-action: auto !important;
+    position: relative !important;
+    z-index: 1 !important;
   }
 }
 

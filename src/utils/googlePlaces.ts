@@ -187,9 +187,16 @@ export const initializeAddressAutocomplete = (
     subtree: true
   });
 
-  // Handle direct clicks on pac items
+  // Handle direct clicks on pac items - but only if not inside an iframe
   document.addEventListener('click', (event) => {
     const target = event.target as HTMLElement;
+
+    // Don't interfere with iframe content or booking widgets
+    if (target.closest('iframe') ||
+        target.closest('[id*="booking"]') ||
+        target.closest('[src*="widget/booking"]')) {
+      return;
+    }
 
     if (target.closest('.pac-item')) {
       isPlaceSelected = true;
@@ -206,10 +213,18 @@ export const initializeAddressAutocomplete = (
     }
   }, true);
 
-  // Hide dropdown when clicking outside
+  // Hide dropdown when clicking outside - but not when clicking in iframes
   document.addEventListener('click', (event) => {
     const target = event.target as Node;
     const pacContainer = document.querySelector('.pac-container');
+
+    // Don't hide if clicking inside an iframe or booking widget
+    if ((target as HTMLElement).closest &&
+        ((target as HTMLElement).closest('iframe') ||
+         (target as HTMLElement).closest('[id*="booking"]') ||
+         (target as HTMLElement).closest('[src*="widget/booking"]'))) {
+      return;
+    }
 
     if (!inputElement.contains(target) &&
         pacContainer &&
